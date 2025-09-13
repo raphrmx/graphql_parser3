@@ -1,6 +1,6 @@
 import 'package:source_span/source_span.dart';
 
-import '../../../graphql_parser2.dart';
+import '../../../graphql_parser3.dart';
 
 abstract class Node {
   FileSpan? get span;
