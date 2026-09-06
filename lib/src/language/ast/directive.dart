@@ -15,10 +15,23 @@ class DirectiveContext extends Node {
   /// The (optional) value being passed with the directive.
   final InputValueContext? value;
 
-  DirectiveContext(this.arrobaToken, this.nameToken, this.colonToken,
-      this.lParenToken, this.rParenToken, this.argument, this.value) {
+  DirectiveContext(
+    this.arrobaToken,
+    this.nameToken,
+    this.colonToken,
+    this.lParenToken,
+    this.rParenToken,
+    this.argument,
+    this.value,
+  ) {
     assert(nameToken != null);
   }
+
+  /// The name of this directive, without its leading `@`.
+  ///
+  /// Matches the accessor every sibling node offers, such as
+  /// [ArgumentContext.name].
+  String? get name => nameToken?.text;
 
   // Use [value] instead.
   //@deprecated

@@ -1,9 +1,22 @@
-import 'package:charcode/charcode.dart';
 import 'package:source_span/source_span.dart';
 
 import '../syntax_error.dart';
 import '../token.dart';
 import 'input_value.dart';
+
+/// Code units the escape sequences of a string literal are built from.
+const int _backslash = 0x5C;
+const int _lowerB = 0x62;
+const int _lowerF = 0x66;
+const int _lowerN = 0x6E;
+const int _lowerR = 0x72;
+const int _lowerT = 0x74;
+const int _lowerU = 0x75;
+
+/// Code units the recognised escapes stand for.
+const int _tab = 0x09;
+const int _lineFeed = 0x0A;
+const int _carriageReturn = 0x0D;
 
 /// A GraphQL string value literal.
 class StringValueContext extends InputValueContext<String> {
@@ -34,8 +47,8 @@ class StringValueContext extends InputValueContext<String> {
     for (var i = 0; i < codeUnits.length; i++) {
       var ch = codeUnits[i];
 
-      if (ch == $backslash) {
-        if (i < codeUnits.length - 5 && codeUnits[i + 1] == $u) {
+      if (ch == _backslash) {
+        if (i < codeUnits.length - 5 && codeUnits[i + 1] == _lowerU) {
           var c1 = codeUnits[i += 2],
               c2 = codeUnits[++i],
               c3 = codeUnits[++i],
@@ -50,20 +63,20 @@ class StringValueContext extends InputValueContext<String> {
           var next = codeUnits[++i];
 
           switch (next) {
-            case $b:
+            case _lowerB:
               buf.write('\b');
               break;
-            case $f:
+            case _lowerF:
               buf.write('\f');
               break;
-            case $n:
-              buf.writeCharCode($lf);
+            case _lowerN:
+              buf.writeCharCode(_lineFeed);
               break;
-            case $r:
-              buf.writeCharCode($cr);
+            case _lowerR:
+              buf.writeCharCode(_carriageReturn);
               break;
-            case $t:
-              buf.writeCharCode($tab);
+            case _lowerT:
+              buf.writeCharCode(_tab);
               break;
             default:
               buf.writeCharCode(next);

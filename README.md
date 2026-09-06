@@ -1,27 +1,22 @@
-# Graphql Parser 2
+# GraphQL Parser 3
 
-![Pub Version (including pre-releases)](https://img.shields.io/pub/v/graphql_parser2?include_prereleases)
-[![Null Safety](https://img.shields.io/badge/null-safety-brightgreen)](https://dart.dev/null-safety)
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/angel_dart/discussion)
-[![License](https://img.shields.io/github/license/dart-backend/graphql_dart)](https://github.com/dart-backend/graphql_dart/blob/master/packages/graphql_parser/LICENSE)
-[![melos](https://img.shields.io/badge/maintained%20with-melos-f700ff.svg?style=flat-square)](https://github.com/invertase/melos)
+[![Build](https://img.shields.io/github/actions/workflow/status/raphrmx/graphql_parser3/ci.yml?branch=main&label=build)](https://github.com/raphrmx/graphql_parser3/actions/workflows/ci.yml)
+[![Maintainer](https://img.shields.io/badge/Maintainer-Raphael-purple)](https://comapps.be)
+[![License](https://img.shields.io/badge/Licence-BSD--3--Clause-blue)](LICENSE)
 
 Parses GraphQL queries and schemas.
 
 *This library is merely a parser/visitor*. Any sort of actual GraphQL API functionality must be implemented by you,
 or by a third-party package.
 
-[Angel3 Framework](https://pub.dev/packages/angel3_framework) users should consider
-[`package:angel3_graphql`](https://pub.dev/packages/angel3_graphql)
-as a dead-simple way to add GraphQL functionality to their servers.
-
 ## Installation
 
-Add `graphql_parser2` as a dependency in your `pubspec.yaml` file:
+These packages are not published on pub.dev. Depend on the repository:
 
 ```yaml
 dependencies:
-  graphql_parser2: ^6.0.0
+  graphql_parser3:
+    git: https://github.com/raphrmx/graphql_parser3.git
 ```
 
 ## Usage
@@ -33,7 +28,7 @@ It has since been updated to reflect upon the grammar in the official GraphQL
 specification ([June 2018](https://facebook.github.io/graphql/June2018/)).
 
 ```dart
-import 'package:graphql_parser2/graphql_parser2.dart';
+import 'package:graphql_parser3/graphql_parser3.dart';
 
 doSomething(String text) {
   var tokens = scan(text);
