@@ -1,5 +1,5 @@
 name: graphql_parser3
-version: 3.2.0
+version: 3.2.1
 description: >-
   Parses GraphQL queries and schemas into an AST whose every node carries a
   source span. The lexer and the recursive-descent parser behind graphql_server3.
