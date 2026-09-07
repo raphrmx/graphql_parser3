@@ -50,9 +50,10 @@ dependency set is unchanged.
 
 ## What version 3 changed
 
-Two dependencies, `source_span` and `string_scanner`, and nothing else. The
-lexer is built on `SpanScanner` and every AST node carries a span, so both earn
-their place.
+Two dependencies, [`source_span`](https://pub.dev/packages/source_span) and
+[`string_scanner`](https://pub.dev/packages/string_scanner), and nothing else.
+The lexer is built on `SpanScanner` and every AST node carries a span, so both
+earn their place.
 
 - `charcode` removed. It supplied the escape-sequence code units of the string
   literal decoder and nothing else; those are named constants in the file that
