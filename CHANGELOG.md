@@ -1,5 +1,16 @@
 # Change Log
 
+## 3.2.0
+
+First release published to pub.dev. The package was consumed straight from its
+git repository until now; nothing about the code changed.
+
+### Added
+- `example/main.dart`: parses a query, reads its operation and its fragment, and
+  shows the span every node carries.
+- Package metadata for pub.dev: a description that says what the package does
+  rather than what to use instead, an issue tracker, and topics.
+
 ## 3.1.0
 
 ### Removed
