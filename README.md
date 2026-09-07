@@ -9,6 +9,45 @@ Parses GraphQL queries and schemas.
 *This library is merely a parser/visitor*. Any sort of actual GraphQL API functionality must be implemented by you,
 or by a third-party package.
 
+## Where this comes from
+
+This package is a fork of the GraphQL stack maintained as part of
+[Angel3](https://github.com/dukefirehawk/angel), which itself descends from the
+`graphql_*` packages Tobe O wrote for Angel. The fork is taken from the `2`
+line; the original BSD-3-Clause licence and its copyright notice are kept
+verbatim in [LICENSE](LICENSE), and the bulk of the type system, the parser and
+the execution algorithm are still that work.
+
+Why fork at all. Two reasons, and only the second one still holds:
+
+- Upstream had stopped moving while the projects depending on it had not.
+  Development there has since resumed, but by then the two lines had diverged
+  far enough that merging back would cost more than it returns.
+- The stack was pinned to `angel3_*`, and `angel3_*` decided which `analyzer`
+  and which Dart SDK everything downstream could use. That is what held the
+  generator seven `analyzer` majors back for months. Cutting the tie was the
+  point of the `3` line.
+
+So: the `3` line does not track upstream and does not merge from it. It is
+maintained on its own, with three rules - as few dependencies as possible, no
+dependency that dictates the SDK, and no behaviour without a test covering it.
+
+## What version 3 changed
+
+Two dependencies, `source_span` and `string_scanner`, and nothing else. The
+lexer is built on `SpanScanner` and every AST node carries a span, so both earn
+their place.
+
+- `charcode` removed. It supplied the escape-sequence code units of the string
+  literal decoder and nothing else; those are named constants in the file that
+  reads them.
+- `DirectiveContext.name` added, matching the accessor every sibling node
+  already offered. `graphql_server3` needed it to match a directive by name.
+- A test suite: 26 tests over the lexer, the parser, string escapes, spans and
+  syntax errors. There were none, although `test` was already declared.
+
+The full list is in [CHANGELOG.md](CHANGELOG.md).
+
 ## Installation
 
 These packages are not published on pub.dev. Depend on the repository:
