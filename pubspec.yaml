@@ -1,8 +1,16 @@
 name: graphql_parser3
 version: 3.2.0
-description: Parses GraphQL queries and schemas. Also includes classes for the GraphQL AST.
+description: >-
+  Parses GraphQL queries and schemas into an AST whose every node carries a
+  source span. The lexer and the recursive-descent parser behind graphql_server3.
 homepage: https://github.com/raphrmx/graphql_parser3
 repository: https://github.com/raphrmx/graphql_parser3
+issue_tracker: https://github.com/raphrmx/graphql_parser3/issues
+
+topics:
+  - graphql
+  - parser
+  - ast
 
 environment:
   sdk: '>=3.8.0 <4.0.0'
