@@ -1,9 +1,10 @@
 # GraphQL Parser 3
 
+[![Pub Version](https://img.shields.io/pub/v/graphql_parser3?color=0175C2)](https://pub.dev/packages/graphql_parser3)
 [![Build](https://img.shields.io/github/actions/workflow/status/raphrmx/graphql_parser3/ci.yml?branch=main&label=build)](https://github.com/raphrmx/graphql_parser3/actions/workflows/ci.yml)
-[![Pub Version](https://img.shields.io/pub/v/graphql_parser3?color=blue)](https://pub.dev/packages/graphql_parser3)
-[![Maintainer](https://img.shields.io/badge/Maintainer-Raphael-purple)](https://comapps.be)
-[![License](https://img.shields.io/badge/Licence-BSD--3--Clause-blue)](LICENSE)
+![Maintainer](https://img.shields.io/badge/Maintainer-Raphael_Vrient-733d90)
+[![Licence](https://img.shields.io/badge/Licence-MIT-8C6A3F)](LICENSE)
+![Platforms](https://img.shields.io/badge/Platforms-Android,_iOS,_macOS,_Windows,_Linux,_Web-22375C.svg)
 
 Parses GraphQL queries and schemas.
 
