@@ -1,5 +1,12 @@
 # Change Log
 
+## 3.3.0
+
+### Changed
+
+- Works on the package with `test` ^1.33.0, up from ^1.31.0. A dev dependency
+  only: nothing about the library changed.
+
 ## 3.2.3
 
 ### Changed
